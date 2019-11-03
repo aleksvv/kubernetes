@@ -9,4 +9,11 @@ spec:
     - name: tomcat9
       image: tomcat:9
       imagePullPolicy: IfNotPresent
+      livenessProbe:
+        httpGet:
+          port: 8080
+          path: /
+        timeoutSeconds: 10
+        initialDelaySeconds: 10
+        periodSeconds: 30
   restartPolicy: Always
