@@ -15,4 +15,8 @@ spec:
       containers:
         - name: tomcat9
           image: tomcat:9
+          livenessProbe:
+            httpGet:
+              port: 8080
+              path: /
 
